@@ -1,6 +1,7 @@
 #include <iostream>
 
 int fibonacci_sum_squares_naive(long long n) {
+// A naive way to approach the problem which will affect the run time and memory (a very large number cannot even be computed with this)
     if (n <= 1)
         return n;
     long long previous = 0;
@@ -49,7 +50,7 @@ int main() {
     std::cin >> n;
     a= fibonacci_huge_efficient(n,10);
     b= fibonacci_huge_efficient(n+1,10);
-    c= (a*b)%10;
+    c= (a*b)%10;  //Since  ((F0)^2+(F!)^2+(F2)^2+.......+(Fn)^2)= F(n)*F(n+1). And we have to do modulo10 of it to find last digit
     // std::cout << fibonacci_sum_squares_naive(n);
     std::cout << c;
 }
